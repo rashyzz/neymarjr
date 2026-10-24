@@ -165,6 +165,21 @@ neymar.addEventListener("mouseenter", function() {
     console.log("hhhhhhhhhh")
 });
 
+const intro = document.querySelector("#intro");
+const introLeft = document.querySelector("#intro .left");
+const introRight = document.querySelector("#intro .right");
+
+window.addEventListener("scroll", function () {
+
+    const introTop = intro.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (introTop < screenHeight - 100) {
+        introLeft.classList.add("active");
+        introRight.classList.add("active");
+    }
+
+});
 </script>
 </body>
 </html>
