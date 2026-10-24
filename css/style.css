@@ -1,0 +1,719 @@
+html {
+    scrollbar-width: none;
+}
+
+* {
+    margin: 0;
+    padding:0;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    background-color: #0B0D0C;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+header {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(255, 0, 0, 0);
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+}
+header h1 {
+    width: 80px;
+    position: absolute;
+    left: 30px;
+}
+header h1 img{
+    width: 100%;
+}
+ul {
+    display: flex;
+    right: 80px;
+    position: absolute;
+ 
+    
+}
+header li {
+    margin-right: 30px;
+    list-style: none;
+}
+a {
+    list-style: none;
+    text-decoration: none;
+    color: rgba(255, 217, 0, 0.614);
+}
+section#hero {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../image/bg.jpeg');
+    background-size: cover;
+     position: relative;
+}
+
+section#hero .vd {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    z-index: 0;
+    left: 0;
+}
+#hero div.container {
+    position: absolute;
+    right: 150px;
+    bottom: 300px;
+}
+#hero div.container h2 {
+    color: #fff;
+    font-size: 20px;
+}
+#hero div.container p{
+    color: white;
+    margin-top: 20px;
+    font-size: 15px;
+}
+#hero div.container button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgba(208, 178, 7, 0.751);
+    color: white;
+    border-radius: 10px;
+}
+#intro {
+    width: 100%;
+    height: 400px;
+    background-color: #0B0D0C;
+    display: flex;
+
+}
+#intro div.left{
+    padding: 30px;
+    width: 50%;
+}
+#intro div.left h2 {
+    margin-top: 30px;
+    color: white;
+    font-size: 19px;
+}
+hr {
+    width: 160px;
+    margin-top: 10px;
+}
+#intro div.left p {
+    margin-top: 10px;
+    color: white;
+    font-size: 12px;
+    line-height: 0.5cm;
+    width: 100%;
+}
+#intro div.right {
+    width: 50%;
+    margin-top: 50px;
+}
+#intro div.right img {
+    width: 40%;
+    margin-left: 100px;
+}
+
+h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 100px;
+    letter-spacing: 3px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+#career {
+    width: 100%;
+    height: 500px;
+    /* background: green; */
+    background-color:rgba(18, 18, 18, 0.595) ;
+}
+#career h1 {
+    margin-top: 30px;
+    font-size: 25px;
+    margin-left: 50px;
+    color: white;
+}
+#career ul {
+    margin-top: 20px;
+    display: flex;
+    left: 30px;
+     list-style: none;
+     width: 100%;
+     /* justify-content: space-around; */
+    
+}
+#career  ul li  {
+  /* background: red; */
+  height: 350px;
+  width: 18%;
+  text-align: center;
+  margin-right: 80px;
+}
+#career  ul li div {
+  /* background: red; */
+  height: 100%;
+  width: 100%;
+  /* box-shadow: rgba(120, 8, 8, 0.35) 0px 5px 15px; */
+  
+  
+}
+#career  ul li div img {
+    width: 100%;
+  height: 100%; 
+  border-radius: 10px;
+  transition: 0.5s;
+  
+}
+#career  ul li div img:hover {
+  height: 100%; 
+  border-radius: 20px;
+box-shadow: rgba(225, 225, 231, 0.25) 0px 50px 100px -20px, rgba(171, 72, 72, 0.3) 0px 30px 60px -30px; 
+transform: rotateY(15deg) rotateX(5deg) scale(1.05); 
+}
+
+#career  ul li div.santos img {
+  height: 100%;
+  width: 100%; 
+}
+
+#career ul li button {
+    margin-top: 10px;
+    width: 80px;
+    height: 30px;
+    background-color: yellow;
+    border-radius: 10px;
+}
+#career ul li button:hover {
+    margin-top: 10px;
+    width: 90px;
+    height: 40px;
+    box-shadow:20px 20px 50px 10px rgb(206, 129, 141) inset;
+    transition: 0.5s;
+}
+#career ul li button.br {
+    
+    background-color:yellow;
+    color:green;
+    font-weight: bold;
+}
+#career ul li button.barca {
+    background-color: rgb(20, 20, 123);
+    color: rgb(224, 82, 82);
+    font-weight: bold;
+}
+#career ul li button.psg {
+   
+    background-color:  rgb(20, 20, 123);
+    color: white;
+    font-weight: bold;
+    
+}
+#career ul li button.santos {
+   
+    background-color:  black;
+    color: white;
+    font-weight: bold;
+
+}
+
+#gallery {
+    width: 100%;
+    min-height: 1000px;
+    background-color: #0B0D0C;
+}
+
+#gallery h1 {
+    margin-top: 10px;
+    color: white;
+    font-size: 25px;
+    margin-left: 30px;
+}
+
+#gallery .container {
+    width: 100%;
+}
+
+#gallery div.container ul {
+    /* background: white; */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    right: 0px;
+    margin-left: 20px;
+}
+
+#gallery div.container ul li {
+    width: 23%;
+    height: 300px;
+    list-style: none;
+    overflow: hidden;
+}
+
+#gallery div.container ul li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    /* 3D hover */
+    transition: transform 0.4s ease;
+}
+
+#gallery div.container ul li:hover img {
+    transform: scale(1.08);
+}
+
+#gallery div.container ul li {
+    perspective: 1000px;
+}
+
+#gallery div.container ul li img {
+    transition: transform 0.5s ease;
+}
+
+#gallery div.container ul li:hover img {
+    transform: rotateY(8deg) rotateX(5deg) scale(1.05);
+}
+
+
+footer {
+    background-color: black;
+    width: 100%;
+    height: 200px;
+    color: white;
+}
+footer div.container {
+    position: absolute;
+    right: 40px;
+    /* background: #000; */
+    margin-top: 50px;
+}
+
+
+.reveal {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+#introney:hover {
+    width: 300px;
+    transition: transform 0.5s ease;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+/* Make sizing predictable */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   TABLET
+   601px - 1024px
+   ========================================= */
+
+@media (max-width: 1024px) {
+
+    /* NAVBAR */
+    header {
+        height: 80px;
+    }
+
+    header h1 {
+        width: 65px;
+        left: 20px;
+    }
+
+    header ul {
+        right: 20px;
+        position: absolute;
+    }
+
+    header li {
+        margin-right: 20px;
+    }
+
+    header li a {
+        font-size: 14px;
+    }
+
+
+    /* HERO */
+    section#hero {
+        height: 100vh;
+    }
+
+    #hero div.container {
+        right: 60px;
+        bottom: 180px;
+    }
+
+    #hero div.container h2 {
+        font-size: 28px;
+    }
+
+    #hero div.container p {
+        font-size: 14px;
+    }
+
+
+    /* INTRO */
+    #intro {
+        height: auto;
+        min-height: 500px;
+        padding: 40px 30px;
+    }
+
+    #intro div.left {
+        width: 60%;
+        padding: 20px;
+    }
+
+    #intro div.left p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    #intro div.right {
+        width: 40%;
+        margin-top: 50px;
+    }
+
+    #intro div.right img {
+        width: 80%;
+        margin-left: 20px;
+    }
+
+
+    /* CAREER */
+    #career {
+        height: auto;
+        min-height: 600px;
+        padding-bottom: 50px;
+    }
+
+    #career h1 {
+        margin-left: 30px;
+    }
+
+    #career ul {
+        position: static;
+        left: auto;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 25px;
+    }
+
+    #career ul li {
+        width: 40%;
+        height: 320px;
+        margin-right: 0;
+    }
+
+
+    /* GALLERY */
+    #gallery {
+        min-height: auto;
+        padding-bottom: 50px;
+    }
+
+    #gallery div.container ul {
+        position: static;
+        right: auto;
+        margin-left: 0;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    #gallery div.container ul li {
+        width: calc(33.333% - 14px);
+        height: 250px;
+    }
+
+
+    /* FOOTER */
+    footer {
+        height: 180px;
+    }
+
+    footer div.container {
+        position: static;
+        margin-top: 0;
+        padding: 60px 30px;
+        text-align: center;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   600px and below
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+    header {
+        width: 100%;
+        height: 70px;
+        position: absolute;
+    }
+
+    header h1 {
+        width: 55px;
+        left: 15px;
+    }
+
+    header ul {
+        position: absolute;
+        right: 10px;
+        top: 25px;
+        display: flex;
+        gap: 10px;
+    }
+
+    header li {
+        margin-right: 0;
+    }
+
+    header li a {
+        font-size: 10px;
+    }
+
+
+    /* HERO */
+    section#hero {
+        width: 100%;
+        height: 100vh;
+    }
+
+    section#hero .vd {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #hero div.container {
+        left: 20px;
+        right: 20px;
+        bottom: 100px;
+    }
+
+    #hero div.container h2 {
+        font-size: 26px;
+        line-height: 1.1;
+    }
+
+    #hero div.container p {
+        font-size: 12px;
+        margin-top: 15px;
+    }
+
+    #hero div.container button {
+        margin-top: 15px;
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+
+    /* INTRO */
+    #intro {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    #intro div.left {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #intro div.left h2 {
+        margin-top: 10px;
+        font-size: 22px;
+    }
+
+    #intro div.left p {
+        width: 100%;
+        font-size: 12px;
+        line-height: 1.7;
+        text-align: justify;
+    }
+
+    #intro div.right {
+        width: 100%;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #intro div.right img {
+        width: 70%;
+        margin-left: 0;
+    }
+
+
+    /* CAREER */
+    #career {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        padding: 40px 0 60px;
+    }
+
+    #career h1 {
+        margin: 0 0 20px 20px;
+        font-size: 25px;
+    }
+
+    #career ul {
+        position: static;
+        left: auto;
+        right: auto;
+        width: 100%;
+        padding: 10px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 25px 15px;
+    }
+
+    #career ul li {
+        width: calc(50% - 8px);
+        height: 260px;
+        margin-right: 0;
+    }
+
+    #career ul li div {
+        width: 100%;
+        height: 220px;
+    }
+
+    #career ul li div img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #career ul li button {
+        width: 75px;
+        height: 28px;
+        margin-top: 8px;
+        font-size: 11px;
+    }
+
+    #career ul li button:hover {
+        width: 80px;
+        height: 32px;
+    }
+
+
+    /* GALLERY */
+    #gallery {
+        width: 100%;
+        min-height: auto;
+        padding-bottom: 50px;
+    }
+
+    #gallery h1 {
+        margin: 0 0 10px 20px;
+        font-size: 25px;
+    }
+
+    #gallery .container {
+        width: 100%;
+    }
+
+    #gallery div.container ul {
+        position: static;
+        right: auto;
+        margin-left: 0;
+        padding: 15px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    #gallery div.container ul li {
+        width: calc(50% - 8px);
+        height: 220px;
+    }
+
+    #gallery div.container ul li img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    /* FOOTER */
+    footer {
+        width: 100%;
+        height: 160px;
+    }
+
+    footer div.container {
+        position: static;
+        width: 100%;
+        margin-top: 0;
+        padding: 50px 15px;
+        text-align: center;
+    }
+
+    footer div.container span {
+        font-size: 13px;
+    }
+
+    footer div.container p {
+        margin-top: 10px;
+        font-size: 10px;
+    }
+}

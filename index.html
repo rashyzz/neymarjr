@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neymar jrf</title>
+    <link rel="stylesheet" href="css/style.css">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        
+        <h1><img src="image/logo.png" alt="logo"></h1>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Career</a></li>
+            <li><a href="">Trphies</a></li>
+            <li><a href="">Gallery</a></li>
+    </ul>
+    </header>
+    <section id="hero">
+        <video id="heroVideo" class="vd"  muted>
+            <source src="./image/neyvdo.mp4">
+        </video>
+        <div class="container">
+            <h2><t>NEYMAR JR<br>THE BRAZILIAN MAGICIAN </h2>
+            <p>“Born to create. Destined to inspire.”</p>
+            <button>Explore career</button>
+        </div>
+    </section>
+    <section id="intro">
+        <div class="left">
+            <h2>THE STORY<br>OF A MAGICIAN</h2>
+            <hr>
+           <p>From the streets of Brazil to the world's biggest football stages, Neymar Jr. built a career defined by creativity, flair, and an unmistakable love for the game.
+
+                Born with a natural talent for football, Neymar quickly stood out for his extraordinary dribbling, fearless skills, and ability to turn ordinary moments into unforgettable ones. From his early days at Santos to his rise on the international stage, every step of his journey was marked by ambition and imagination.
+                His time at Barcelona brought a new level of global recognition, where his chemistry with Lionel Messi and Luis Suárez formed one of football's most celebrated attacking partnerships. Later, his move to Paris Saint-Germain made him one of the most prominent stars in world football, while his journey continued with new challenges and chapters.
+                Beyond the goals and trophies, Neymar became known for the way he played — with freedom, confidence, and creativity. Every touch, flick, dribble, and finish carried his unique signature.
+                For Brazil, he carried the hopes of a football-loving nation, becoming one of the country's most influential modern stars. His journey has never been only about statistics; it has been about moments, emotions, and the magic he brings to the pitch.
+                Neymar's story is a reminder that football is not just about winning — it's about inspiring, creating, and making people remember the moment.</p>
+        </div>
+        <div class="right">
+             <img id="neymar"  src="image/pic1.jpeg" alt="">
+        </div>
+       
+    </section>
+    <section class="reveal" id="career">
+        <h1>Caree Stats</h1>
+        <ul>
+            <li class="brazil"><div class="br"><img src="./image/br.jpeg" alt=""></div><Button class="br">Brazil</Button></li>
+            <li class="barca"><div class="barca"><img src="./image/four.jpeg" alt=""></div><Button class="barca">Barca</Button></li>
+            <li class="psg"><div class="psg"><img src="./image/psg.jpeg" alt=""></div><Button class="psg">psg</Button></li>
+            <li class="santos"><div class="santos"><img src="./image/santos.jpeg" alt=""></div><Button class="santos">santos</Button></li>
+        </ul>
+    </section>
+    <section class="reveal" id="gallery">
+        <h1>Gallery</h1>
+        <div class="container">
+            <ul>
+                <li><img src="./image/one.jpeg" alt=""></li>
+                <li><img src="./image/two.jpeg" alt=""></li>
+                <li><img src="./image/three.jpeg" alt=""></li>
+                <li><img src="./image/four.jpeg" alt=""></li>
+                <li><img src="./image/five.jpeg" alt=""></li>
+                <li><img src="./image/Neymar Jr(1).jpeg" alt=""></li>
+                <li><img src="./image/seven.jpeg" alt=""></li>
+                <li><img src="./image/eight.jpeg" alt=""></li>
+                <li><img src="./image/nine.jpeg" alt=""></li>
+                <li><img src="./image/ten.jpeg" alt=""></li>
+                <li><img src="./image/leven.jpeg" alt=""></li>
+                <li><img src="./image/tolve.jpeg" alt=""></li>
+            </ul>
+        </div>
+    </section>
+    
+    <footer class="reveal">
+        <div class="container">
+             <span>@ 2026  Neymar JR</span>
+             <p>Designed and developed by muhammad rashid</p>
+              </div>
+    </footer>
+       
+    
+    <script>
+        
+
+
+const sections = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", function() {
+
+    sections.forEach(function(section) {
+
+        const sectionTop = section.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (sectionTop < screenHeight - 100) {
+            section.classList.add("active");
+        }
+
+    });
+
+});
+
+
+const video = document.getElementById("heroVideo");
+const career = document.getElementById("career");
+
+let scrollTimer;
+let scrollLocked = false;
+let videoFinished = false;
+
+window.addEventListener("wheel", function(event) {
+
+    // Only scrolling DOWN
+    if (event.deltaY > 0 && !videoFinished) {
+
+        event.preventDefault();
+
+        // Lock page scrolling
+        if (!scrollLocked) {
+            scrollLocked = true;
+            document.body.style.overflow = "hidden";
+        }
+
+        // Play video
+        video.play();
+
+        // Pause when scrolling stops
+        clearTimeout(scrollTimer);
+
+        scrollTimer = setTimeout(function() {
+            video.pause();
+        }, 150);
+    }
+
+}, { passive: false });
+
+
+// When video finishes
+video.addEventListener("ended", function() {
+
+    videoFinished = true;
+
+    // Unlock page scrolling
+    document.body.style.overflow = "";
+
+    // Move to next section
+    career.scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
+
+
+const neymar = document.getElementById('neymar')
+
+neymar.addEventListener("mouseenter", function() {
+    console.log("hhhhhhhhhh")
+});
+
+</script>
+</body>
+</html>
