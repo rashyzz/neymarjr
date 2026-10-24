@@ -1,255 +1,547 @@
-html {
-    scrollbar-width: none;
-}
+/* ================================
+   RESET
+================================ */
 
 * {
     margin: 0;
-    padding:0;
-}
-html,
-body {
-    margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html {
     scrollbar-width: none;
-    -ms-overflow-style: none;
-    background-color: #0B0D0C;
+    scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
     display: none;
-    width: 0;
-    height: 0;
 }
 
 body {
     width: 100%;
     overflow-x: hidden;
+    background-color: #0B0D0C;
+    color: white;
+    font-family: "Poppins", sans-serif;
 }
+
+
+/* ================================
+   HEADER
+================================ */
+
 header {
     width: 100%;
     height: 100px;
-    background-color: rgba(255, 0, 0, 0);
-    /* position: relative; */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 10;
+
     display: flex;
     align-items: center;
-    position: absolute;
-    z-index: 1;
+
+    background: rgba(0, 0, 0, 0.15);
 }
+
 header h1 {
     width: 80px;
     position: absolute;
     left: 30px;
 }
-header h1 img{
+
+header h1 img {
     width: 100%;
+    display: block;
 }
-ul {
-    display: flex;
-    right: 80px;
+
+header ul {
     position: absolute;
- 
-    
+    right: 80px;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    list-style: none;
 }
+
 header li {
-    margin-right: 30px;
     list-style: none;
 }
-a {
-    list-style: none;
+
+header a {
     text-decoration: none;
-    color: rgba(255, 217, 0, 0.614);
+    color: rgba(255, 217, 0, 0.75);
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
 }
+
+header a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 217, 0, 0.8);
+}
+
+
+/* ================================
+   HERO
+================================ */
+
 section#hero {
     width: 100%;
     height: 100vh;
-    background-image: url('../image/bg.jpeg');
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-image: url("../image/bg.jpeg");
     background-size: cover;
-     position: relative;
+    background-position: center;
 }
+
+/* Video */
 
 section#hero .vd {
     position: absolute;
+
+    top: 0;
+    left: 0;
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
-    top: 0;
+
     z-index: 0;
-    left: 0;
 }
+
+/* Dark overlay */
+
+section#hero::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.35)
+    );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+/* Hero content */
+
 #hero div.container {
     position: absolute;
-    right: 150px;
-    bottom: 300px;
+
+    right: 10%;
+    bottom: 25%;
+
+    z-index: 2;
+
+    max-width: 430px;
 }
+
 #hero div.container h2 {
-    color: #fff;
-    font-size: 20px;
+    color: #ffffff;
+
+    font-size: 28px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.8);
 }
-#hero div.container p{
+
+#hero div.container p {
     color: white;
+
     margin-top: 20px;
+
     font-size: 15px;
+    line-height: 1.6;
+
+    text-shadow: 0 2px 10px black;
 }
-#hero div.container button{
+
+#hero div.container button {
     margin-top: 20px;
-    padding: 10px 20px;
-    background-color: rgba(208, 178, 7, 0.751);
-    color: white;
+
+    padding: 12px 24px;
+
+    border: none;
     border-radius: 10px;
+
+    background-color: rgba(208, 178, 7, 0.85);
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
 }
+
+#hero div.container button:hover {
+    transform: translateY(-4px) scale(1.05);
+
+    background-color: rgba(255, 217, 0, 0.95);
+
+    box-shadow: 0 10px 30px rgba(255, 217, 0, 0.25);
+}
+
+
+/* ================================
+   INTRO SECTION
+================================ */
+
 #intro {
     width: 100%;
-    height: 400px;
-    background-color: #0B0D0C;
+    min-height: 500px;
+
+    padding: 70px 7%;
+
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+    gap: 70px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(208, 178, 7, 0.10),
+            transparent 30%
+        ),
+        #0B0D0C;
 }
-#intro div.left{
-    padding: 30px;
-    width: 50%;
+
+/* Small golden line on left */
+
+#intro::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 20%;
+
+    width: 5px;
+    height: 60%;
+
+    background: #d0b207;
+
+    border-radius: 0 5px 5px 0;
 }
+
+/* Left side */
+
+#intro div.left {
+    width: 58%;
+
+    padding: 0;
+
+    position: relative;
+    z-index: 2;
+}
+
 #intro div.left h2 {
-    margin-top: 30px;
     color: white;
-    font-size: 19px;
+
+    font-size: 34px;
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
 }
-hr {
-    width: 160px;
-    margin-top: 10px;
+
+#intro div.left hr {
+    width: 170px;
+    height: 3px;
+
+    margin-top: 18px;
+
+    border: none;
+
+    background: #d0b207;
 }
+
 #intro div.left p {
-    margin-top: 10px;
-    color: white;
-    font-size: 12px;
-    line-height: 0.5cm;
     width: 100%;
+
+    margin-top: 25px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 14px;
+    line-height: 1.9;
 }
+
+/* Right image */
+
 #intro div.right {
-    width: 50%;
-    margin-top: 50px;
+    width: 42%;
+
+    margin-top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
 }
+
+/* Glow behind image */
+
+#intro div.right::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    background: rgba(208, 178, 7, 0.12);
+
+    filter: blur(60px);
+
+    border-radius: 50%;
+}
+
 #intro div.right img {
-    width: 40%;
-    margin-left: 100px;
+    width: min(360px, 90%);
+
+    height: 400px;
+
+    object-fit: cover;
+
+    margin-left: 0;
+
+    border-radius: 18px;
+
+    position: relative;
+    z-index: 2;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(208, 178, 7, 0.08);
+
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-h1 {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 100px;
-    letter-spacing: 3px;
+#intro div.right img:hover {
+    transform: scale(1.04) rotateY(-5deg);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.7),
+        0 0 35px rgba(208, 178, 7, 0.18);
 }
 
-body {
-    font-family: "Poppins", sans-serif;
-}
+
+/* ================================
+   CAREER
+================================ */
 
 #career {
     width: 100%;
-    height: 500px;
-    /* background: green; */
-    background-color:rgba(18, 18, 18, 0.595) ;
-}
-#career h1 {
-    margin-top: 30px;
-    font-size: 25px;
-    margin-left: 50px;
-    color: white;
-}
-#career ul {
-    margin-top: 20px;
-    display: flex;
-    left: 30px;
-     list-style: none;
-     width: 100%;
-     /* justify-content: space-around; */
-    
-}
-#career  ul li  {
-  /* background: red; */
-  height: 350px;
-  width: 18%;
-  text-align: center;
-  margin-right: 80px;
-}
-#career  ul li div {
-  /* background: red; */
-  height: 100%;
-  width: 100%;
-  /* box-shadow: rgba(120, 8, 8, 0.35) 0px 5px 15px; */
-  
-  
-}
-#career  ul li div img {
-    width: 100%;
-  height: 100%; 
-  border-radius: 10px;
-  transition: 0.5s;
-  
-}
-#career  ul li div img:hover {
-  height: 100%; 
-  border-radius: 20px;
-box-shadow: rgba(225, 225, 231, 0.25) 0px 50px 100px -20px, rgba(171, 72, 72, 0.3) 0px 30px 60px -30px; 
-transform: rotateY(15deg) rotateX(5deg) scale(1.05); 
+    min-height: 600px;
+
+    padding: 55px 2% 70px;
+
+    background-color: rgba(18, 18, 18, 0.595);
+
+    overflow: hidden;
 }
 
-#career  ul li div.santos img {
-  height: 100%;
-  width: 100%; 
+#career h1 {
+    margin: 0 0 35px 30px;
+
+    color: white;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 34px;
+
+    letter-spacing: 4px;
 }
+
+#career ul {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    position: static;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    list-style: none;
+}
+
+#career ul li {
+    width: 22%;
+
+    height: auto;
+
+    margin: 0;
+
+    text-align: center;
+
+    list-style: none;
+}
+
+/* Image container */
+
+#career ul li div {
+    width: 100%;
+    height: 380px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    position: relative;
+}
+
+/* Images */
+
+#career ul li div img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 12px;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+/* Hover */
+
+#career ul li div:hover img {
+    transform: scale(1.07);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Individual image classes */
+
+#career ul li div.santos img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Career buttons */
 
 #career ul li button {
-    margin-top: 10px;
-    width: 80px;
-    height: 30px;
-    background-color: yellow;
-    border-radius: 10px;
-}
-#career ul li button:hover {
-    margin-top: 10px;
+    margin-top: 14px;
+
     width: 90px;
-    height: 40px;
-    box-shadow:20px 20px 50px 10px rgb(206, 129, 141) inset;
-    transition: 0.5s;
-}
-#career ul li button.br {
-    
-    background-color:yellow;
-    color:green;
+    height: 35px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: "Poppins", sans-serif;
+
     font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
 }
+
+#career ul li button:hover {
+    transform: translateY(-5px) scale(1.05);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+#career ul li button.br {
+    background-color: yellow;
+    color: green;
+}
+
 #career ul li button.barca {
     background-color: rgb(20, 20, 123);
     color: rgb(224, 82, 82);
-    font-weight: bold;
 }
-#career ul li button.psg {
-   
-    background-color:  rgb(20, 20, 123);
-    color: white;
-    font-weight: bold;
-    
-}
-#career ul li button.santos {
-   
-    background-color:  black;
-    color: white;
-    font-weight: bold;
 
+#career ul li button.psg {
+    background-color: rgb(20, 20, 123);
+    color: white;
 }
+
+#career ul li button.santos {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+
+/* ================================
+   GALLERY
+================================ */
 
 #gallery {
     width: 100%;
     min-height: 1000px;
+
+    padding: 55px 2% 80px;
+
     background-color: #0B0D0C;
+
+    overflow: hidden;
 }
 
 #gallery h1 {
-    margin-top: 10px;
+    margin: 0 0 30px 30px;
+
     color: white;
-    font-size: 25px;
-    margin-left: 30px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 34px;
+
+    letter-spacing: 4px;
 }
 
 #gallery .container {
@@ -257,573 +549,629 @@ transform: rotateY(15deg) rotateX(5deg) scale(1.05);
 }
 
 #gallery div.container ul {
-    /* background: white; */
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 20px;
-    right: 0px;
-    margin-left: 20px;
+
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 22px;
+
+    list-style: none;
 }
 
 #gallery div.container ul li {
-    width: 23%;
+    width: 100%;
     height: 300px;
+
     list-style: none;
+
     overflow: hidden;
+
+    border-radius: 8px;
+
+    perspective: 1000px;
 }
 
 #gallery div.container ul li img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     display: block;
 
-    /* 3D hover */
-    transition: transform 0.4s ease;
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
 }
 
 #gallery div.container ul li:hover img {
-    transform: scale(1.08);
+    transform: rotateY(8deg) rotateX(5deg) scale(1.06);
+
+    filter: brightness(1.1);
 }
 
-#gallery div.container ul li {
-    perspective: 1000px;
-}
 
-#gallery div.container ul li img {
-    transition: transform 0.5s ease;
-}
-
-#gallery div.container ul li:hover img {
-    transform: rotateY(8deg) rotateX(5deg) scale(1.05);
-}
-
+/* ================================
+   FOOTER
+================================ */
 
 footer {
-    background-color: black;
     width: 100%;
-    height: 200px;
+    min-height: 200px;
+
+    padding: 60px 7%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #050505,
+            #111
+        );
+
     color: white;
-}
-footer div.container {
-    position: absolute;
-    right: 40px;
-    /* background: #000; */
-    margin-top: 50px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+footer div.container {
+    position: static;
+
+    margin: 0;
+
+    text-align: center;
+}
+
+footer span {
+    font-size: 18px;
+
+    color: rgba(255, 217, 0, 0.8);
+
+    font-weight: 600;
+}
+
+footer p {
+    margin-top: 10px;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 13px;
+}
+
+
+/* ================================
+   SCROLL REVEAL
+================================ */
 
 .reveal {
     opacity: 0;
+
     transform: translateY(80px);
-    transition: all 1s ease;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
 }
 
 .reveal.active {
     opacity: 1;
+
     transform: translateY(0);
 }
+
+
+/* ================================
+   NEYMAR IMAGE HOVER
+================================ */
+
 #introney:hover {
     width: 300px;
+
     transition: transform 0.5s ease;
 }
 
-/* =========================================
-   RESPONSIVE DESIGN
-   ========================================= */
 
-/* Make sizing predictable */
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    width: 100%;
-    overflow-x: hidden;
-}
-
-
-/* =========================================
+/* ==================================================
    TABLET
-   601px - 1024px
-   ========================================= */
+   768px - 1024px
+================================================== */
 
 @media (max-width: 1024px) {
 
-    /* NAVBAR */
+    /* Header */
+
     header {
         height: 80px;
     }
 
     header h1 {
         width: 65px;
-        left: 20px;
+        left: 25px;
     }
 
     header ul {
-        right: 20px;
-        position: absolute;
+        right: 35px;
+        gap: 20px;
     }
 
-    header li {
-        margin-right: 20px;
-    }
-
-    header li a {
+    header a {
         font-size: 14px;
     }
 
 
-    /* HERO */
-    section#hero {
-        height: 100vh;
-    }
+    /* Hero */
 
     #hero div.container {
-        right: 60px;
-        bottom: 180px;
+        right: 7%;
+
+        bottom: 18%;
+
+        max-width: 380px;
     }
 
     #hero div.container h2 {
-        font-size: 28px;
-    }
-
-    #hero div.container p {
-        font-size: 14px;
+        font-size: 24px;
     }
 
 
-    /* INTRO */
+    /* Intro */
+
     #intro {
-        height: auto;
-        min-height: 500px;
-        padding: 40px 30px;
+        padding: 60px 5%;
+
+        gap: 40px;
     }
 
     #intro div.left {
-        width: 60%;
-        padding: 20px;
+        width: 55%;
+    }
+
+    #intro div.right {
+        width: 45%;
+    }
+
+    #intro div.left h2 {
+        font-size: 28px;
     }
 
     #intro div.left p {
         font-size: 13px;
-        line-height: 1.7;
-    }
-
-    #intro div.right {
-        width: 40%;
-        margin-top: 50px;
+        line-height: 1.8;
     }
 
     #intro div.right img {
-        width: 80%;
-        margin-left: 20px;
+        width: 300px;
+        height: 360px;
     }
 
 
-    /* CAREER */
+    /* Career */
+
     #career {
-        height: auto;
-        min-height: 600px;
-        padding-bottom: 50px;
-    }
-
-    #career h1 {
-        margin-left: 30px;
+        padding: 50px 3%;
     }
 
     #career ul {
-        position: static;
-        left: auto;
-        width: 100%;
-        padding: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        gap: 25px;
+        gap: 15px;
     }
 
     #career ul li {
-        width: 40%;
-        height: 320px;
-        margin-right: 0;
+        width: 23%;
+    }
+
+    #career ul li div {
+        height: 300px;
     }
 
 
-    /* GALLERY */
-    #gallery {
-        min-height: auto;
-        padding-bottom: 50px;
-    }
+    /* Gallery */
 
     #gallery div.container ul {
-        position: static;
-        right: auto;
-        margin-left: 0;
-        padding: 20px;
-        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
     }
 
     #gallery div.container ul li {
-        width: calc(33.333% - 14px);
-        height: 250px;
-    }
-
-
-    /* FOOTER */
-    footer {
-        height: 180px;
-    }
-
-    footer div.container {
-        position: static;
-        margin-top: 0;
-        padding: 60px 30px;
-        text-align: center;
+        height: 280px;
     }
 }
 
 
-/* =========================================
+/* ==================================================
    MOBILE
-   600px and below
-   ========================================= */
+   Below 768px
+================================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
 
-    /* NAVBAR */
+    /* Header */
+
     header {
-        width: 100%;
-        height: 70px;
-        position: absolute;
+        height: 75px;
+
+        background: rgba(0, 0, 0, 0.35);
     }
 
     header h1 {
         width: 55px;
-        left: 15px;
+
+        left: 18px;
     }
 
     header ul {
-        position: absolute;
-        right: 10px;
-        top: 25px;
-        display: flex;
-        gap: 10px;
+        right: 15px;
+
+        gap: 12px;
     }
 
-    header li {
-        margin-right: 0;
-    }
-
-    header li a {
-        font-size: 10px;
+    header a {
+        font-size: 11px;
     }
 
 
-    /* HERO */
+    /* Hero */
+
     section#hero {
-        width: 100%;
         height: 100vh;
+
+        background-position: center;
     }
 
     section#hero .vd {
-        width: 100%;
-        height: 100%;
         object-fit: cover;
     }
 
     #hero div.container {
-        left: 20px;
-        right: 20px;
-        bottom: 100px;
+        width: 90%;
+
+        right: 5%;
+
+        bottom: 15%;
+
+        max-width: none;
+
+        text-align: center;
     }
 
     #hero div.container h2 {
-        font-size: 26px;
-        line-height: 1.1;
+        font-size: 24px;
+
+        line-height: 1.3;
     }
 
     #hero div.container p {
-        font-size: 12px;
         margin-top: 15px;
+
+        font-size: 13px;
     }
 
     #hero div.container button {
-        margin-top: 15px;
-        padding: 8px 16px;
+        margin-top: 18px;
+
+        padding: 10px 18px;
+
         font-size: 12px;
     }
 
 
-    /* INTRO */
+    /* Intro */
+
     #intro {
-        width: 100%;
-        height: auto;
         min-height: auto;
+
+        padding: 60px 25px;
+
         display: flex;
+
         flex-direction: column;
-        padding: 40px 20px;
+
+        gap: 45px;
+
+        align-items: center;
+    }
+
+    #intro::before {
+        top: 5%;
+
+        height: 90%;
+
+        width: 3px;
     }
 
     #intro div.left {
         width: 100%;
-        padding: 10px;
     }
 
     #intro div.left h2 {
-        margin-top: 10px;
-        font-size: 22px;
+        font-size: 27px;
+
+        line-height: 1.2;
+    }
+
+    #intro div.left hr {
+        width: 130px;
+
+        margin-top: 15px;
     }
 
     #intro div.left p {
         width: 100%;
-        font-size: 12px;
-        line-height: 1.7;
-        text-align: justify;
+
+        margin-top: 20px;
+
+        font-size: 13px;
+
+        line-height: 1.8;
     }
 
     #intro div.right {
         width: 100%;
-        margin-top: 30px;
-        display: flex;
-        justify-content: center;
+
+        margin: 0;
     }
 
     #intro div.right img {
-        width: 70%;
-        margin-left: 0;
+        width: 75%;
+
+        max-width: 300px;
+
+        height: 350px;
+
+        margin: 0;
     }
 
 
-    /* CAREER */
+    /* Career */
+
     #career {
-        width: 100%;
-        height: auto;
         min-height: auto;
-        padding: 40px 0 60px;
+
+        padding: 50px 20px 60px;
     }
 
     #career h1 {
-        margin: 0 0 20px 20px;
-        font-size: 25px;
+        margin: 0 0 30px 10px;
+
+        font-size: 30px;
+
+        letter-spacing: 3px;
     }
 
     #career ul {
-        position: static;
-        left: auto;
-        right: auto;
         width: 100%;
-        padding: 10px 20px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 25px 15px;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 30px 15px;
     }
 
     #career ul li {
-        width: calc(50% - 8px);
-        height: 260px;
-        margin-right: 0;
+        width: 100%;
+
+        margin: 0;
     }
 
     #career ul li div {
         width: 100%;
-        height: 220px;
-    }
 
-    #career ul li div img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: 250px;
+
+        border-radius: 10px;
     }
 
     #career ul li button {
-        width: 75px;
-        height: 28px;
-        margin-top: 8px;
-        font-size: 11px;
-    }
+        width: 85px;
 
-    #career ul li button:hover {
-        width: 80px;
-        height: 32px;
+        height: 34px;
+
+        font-size: 12px;
     }
 
 
-    /* GALLERY */
+    /* Gallery */
+
     #gallery {
-        width: 100%;
         min-height: auto;
-        padding-bottom: 50px;
+
+        padding: 50px 15px 60px;
     }
 
     #gallery h1 {
-        margin: 0 0 10px 20px;
-        font-size: 25px;
-    }
+        margin: 0 0 25px 15px;
 
-    #gallery .container {
-        width: 100%;
+        font-size: 30px;
+
+        letter-spacing: 3px;
     }
 
     #gallery div.container ul {
-        position: static;
-        right: auto;
-        margin-left: 0;
-        padding: 15px;
         width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 15px;
+
+        margin: 0;
+
+        padding: 0;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
     }
 
     #gallery div.container ul li {
-        width: calc(50% - 8px);
+        width: 100%;
+
         height: 220px;
-    }
 
-    #gallery div.container ul li img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        border-radius: 7px;
     }
 
 
-    /* FOOTER */
+    /* Footer */
+
     footer {
-        width: 100%;
-        height: 160px;
+        min-height: 160px;
+
+        padding: 45px 20px;
     }
 
-    footer div.container {
-        position: static;
-        width: 100%;
-        margin-top: 0;
-        padding: 50px 15px;
-        text-align: center;
+    footer span {
+        font-size: 16px;
     }
 
-    footer div.container span {
-        font-size: 13px;
+    footer p {
+        font-size: 11px;
+
+        line-height: 1.6;
+    }
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+   Below 480px
+================================================== */
+
+@media (max-width: 480px) {
+
+    /* Header */
+
+    header {
+        height: 65px;
     }
 
-    footer div.container p {
-        margin-top: 10px;
+    header h1 {
+        width: 48px;
+
+        left: 12px;
+    }
+
+    header ul {
+        right: 10px;
+
+        gap: 8px;
+    }
+
+    header a {
+        font-size: 9px;
+    }
+
+
+    /* Hero */
+
+    #hero div.container {
+        bottom: 12%;
+
+        width: 92%;
+
+        right: 4%;
+    }
+
+    #hero div.container h2 {
+        font-size: 21px;
+    }
+
+    #hero div.container p {
+        font-size: 11px;
+    }
+
+
+    /* Intro */
+
+    #intro {
+        padding: 50px 20px;
+    }
+
+    #intro div.left h2 {
+        font-size: 24px;
+    }
+
+    #intro div.left p {
+        font-size: 12px;
+
+        line-height: 1.75;
+    }
+
+    #intro div.right img {
+        width: 85%;
+
+        height: 300px;
+    }
+
+
+    /* Career */
+
+    #career {
+        padding: 45px 15px;
+    }
+
+    #career h1 {
+        margin-left: 5px;
+
+        font-size: 27px;
+    }
+
+    #career ul {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    #career ul li div {
+        height: 360px;
+    }
+
+    #career ul li button {
+        width: 90px;
+    }
+
+
+    /* Gallery */
+
+    #gallery {
+        padding: 45px 10px;
+    }
+
+    #gallery h1 {
+        margin-left: 10px;
+
+        font-size: 27px;
+    }
+
+    #gallery div.container ul {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 8px;
+    }
+
+    #gallery div.container ul li {
+        height: 180px;
+    }
+
+
+    /* Footer */
+
+    footer {
+        min-height: 140px;
+
+        padding: 35px 15px;
+    }
+
+    footer span {
+        font-size: 14px;
+    }
+
+    footer p {
         font-size: 10px;
     }
-}
-
-/* ================= INTRO ================= */
-
-#intro {
-    width: 100%;
-    min-height: 500px;
-    background:
-        radial-gradient(circle at 80% 50%, rgba(255, 210, 0, 0.08), transparent 30%),
-        #0B0D0C;
-
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-}
-
-/* Small gold line on left */
-#intro::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 20%;
-    width: 5px;
-    height: 60%;
-    background: rgba(255, 217, 0, 0.7);
-}
-
-/* LEFT TEXT */
-
-#intro div.left {
-    padding: 50px;
-    width: 55%;
-
-    opacity: 0;
-    transform: translateX(-100px);
-
-    transition: all 1s ease;
-}
-
-#intro div.left.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-#intro div.left h2 {
-    color: white;
-    font-size: 30px;
-    line-height: 1.2;
-    letter-spacing: 2px;
-}
-
-#intro div.left hr {
-    width: 160px;
-    margin-top: 15px;
-    border: none;
-    border-top: 2px solid rgba(255, 217, 0, 0.7);
-}
-
-#intro div.left p {
-    margin-top: 20px;
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-
-/* RIGHT IMAGE */
-
-#intro div.right {
-    width: 45%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    opacity: 0;
-    transform: translateX(100px);
-
-    transition: all 1.2s ease;
-}
-
-#intro div.right.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-#intro div.right img {
-    width: 55%;
-    border-radius: 15px;
-
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.7),
-        0 0 30px rgba(255, 217, 0, 0.08);
-
-    transition: transform 0.6s ease,
-                box-shadow 0.6s ease;
-}
-
-/* IMAGE HOVER */
-
-#intro div.right img:hover {
-    transform:
-        perspective(1000px)
-        rotateY(-8deg)
-        rotateX(4deg)
-        scale(1.05);
-
-    box-shadow:
-        20px 30px 60px rgba(0, 0, 0, 0.8),
-        0 0 40px rgba(255, 217, 0, 0.2);
 }

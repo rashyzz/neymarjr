@@ -86,16 +86,17 @@
               </div>
     </footer>
        
-    
     <script>
-        
 
+// ===============================
+// REVEAL ANIMATION
+// ===============================
 
 const sections = document.querySelectorAll(".reveal");
 
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
 
-    sections.forEach(function(section) {
+    sections.forEach(function (section) {
 
         const sectionTop = section.getBoundingClientRect().top;
         const screenHeight = window.innerHeight;
@@ -109,21 +110,25 @@ window.addEventListener("scroll", function() {
 });
 
 
+// ===============================
+// HERO VIDEO SCROLL CONTROL
+// ===============================
+
 const video = document.getElementById("heroVideo");
-const career = document.getElementById("career");
 
 let scrollTimer;
 let scrollLocked = false;
 let videoFinished = false;
 
-window.addEventListener("wheel", function(event) {
+window.addEventListener("wheel", function (event) {
 
-    // Only scrolling DOWN
+    // Only control DOWN scrolling
     if (event.deltaY > 0 && !videoFinished) {
 
+        // Stop page from moving
         event.preventDefault();
 
-        // Lock page scrolling
+        // Lock scrolling
         if (!scrollLocked) {
             scrollLocked = true;
             document.body.style.overflow = "hidden";
@@ -132,10 +137,10 @@ window.addEventListener("wheel", function(event) {
         // Play video
         video.play();
 
-        // Pause when scrolling stops
+        // Stop video when scrolling stops
         clearTimeout(scrollTimer);
 
-        scrollTimer = setTimeout(function() {
+        scrollTimer = setTimeout(function () {
             video.pause();
         }, 150);
     }
@@ -143,43 +148,37 @@ window.addEventListener("wheel", function(event) {
 }, { passive: false });
 
 
-// When video finishes
-video.addEventListener("ended", function() {
+// ===============================
+// VIDEO FINISHED
+// ===============================
+
+video.addEventListener("ended", function () {
 
     videoFinished = true;
 
-    // Unlock page scrolling
+    // Unlock page
     document.body.style.overflow = "";
 
-    // Move to next section
-    career.scrollIntoView({
+    // Go to Career section
+    document.getElementById("career").scrollIntoView({
         behavior: "smooth"
     });
 
 });
 
 
-const neymar = document.getElementById('neymar')
+// ===============================
+// NEYMAR IMAGE HOVER
+// ===============================
 
-neymar.addEventListener("mouseenter", function() {
-    console.log("hhhhhhhhhh")
-});
+const neymar = document.getElementById("neymar");
 
-const intro = document.querySelector("#intro");
-const introLeft = document.querySelector("#intro .left");
-const introRight = document.querySelector("#intro .right");
+neymar.addEventListener("mouseenter", function () {
 
-window.addEventListener("scroll", function () {
-
-    const introTop = intro.getBoundingClientRect().top;
-    const screenHeight = window.innerHeight;
-
-    if (introTop < screenHeight - 100) {
-        introLeft.classList.add("active");
-        introRight.classList.add("active");
-    }
+    console.log("Mouse entered Neymar image");
 
 });
+
 </script>
 </body>
 </html>
